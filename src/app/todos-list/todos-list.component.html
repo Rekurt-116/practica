@@ -1,0 +1,10 @@
+<app-create-todos-form (createTodo)="createTodo($event)"></app-create-todos-form>
+<div style="width: 1320px; margin: 0 auto;">
+  <div style="display: flex; flex-wrap: wrap;">
+    <div *ngFor="let item of todos" style="width: 300px; height: 250px; border: 1px solid black">
+      <p>{{ item.title }}</p>
+      <p>{{ item.completed }}</p>
+      <button (click)="deleteTodo(item.id)">УДАЛИТЬ TODO</button>
+    </div>
+  </div>
+</div>

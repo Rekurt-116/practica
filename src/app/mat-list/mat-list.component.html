@@ -1,0 +1,15 @@
+<h1>ПРАКТИКА НА ANGULAR MATERIAL</h1>
+
+
+
+<div class="mat-list">
+  <div class="mat-list-position">
+    <div class="mat-list-ngFor" *ngFor="let item of usersComponent.users$ | async">
+      <p>{{ item.id }}</p>
+      <p>{{ item.title }}</p>
+      <p>{{ item.body }}</p>
+      <p><button (click)="deletePost(item.id)">DELETE POST</button></p>
+      <p><button (click)="openDialog()">EDIT POST</button></p>
+    </div>
+  </div>
+</div>

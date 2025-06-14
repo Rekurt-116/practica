@@ -1,0 +1,11 @@
+<div>
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <h1>TITLE</h1>
+    <p><input type="text" formControlName="title"></p>
+
+    <h1>COMPLETED</h1>
+    <p><input type="text" formControlName="completed"></p>
+
+    <button [disabled]="form.invalid">СОЗДАТЬ TODO</button>
+  </form>
+</div>

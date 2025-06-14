@@ -1,0 +1,8 @@
+<div style="width: 1320px; margin: 0 auto">
+  <div style="display: flex; flex-wrap: wrap">
+    <div *ngFor="let user of usersComponent.users$ | async" style="width: 300px; height: 250px; border: 1px solid white; padding: 5px;">
+      {{ user.title }}
+      <p><button (click)="deleteUser(user.id)">DELETE USER</button></p>
+    </div>
+  </div>
+</div>

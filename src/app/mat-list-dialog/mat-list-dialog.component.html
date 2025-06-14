@@ -1,0 +1,14 @@
+<div style="width: 400px; height: 400px; margin: 0 auto; color: white; padding: 40px;">
+  <form [formGroup]="form">
+    <p>ID</p>
+    <input type="text" formControlName="id">
+
+    <p>TITLE</p>
+    <input type="text" formControlName="title">
+
+    <p>BODY</p>
+    <input type="text" formControlName="body">
+
+    <p><button [disabled]="form.invalid" [mat-dialog-close]="poluchiUser">EDIT TODO</button></p>
+  </form>
+</div>
