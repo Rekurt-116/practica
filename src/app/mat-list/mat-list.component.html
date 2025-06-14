@@ -4,11 +4,10 @@
 
 <div class="mat-list">
   <div class="mat-list-position">
-    <div class="mat-list-ngFor" *ngFor="let item of usersComponent.users$ | async">
-      <p>{{ item.id }}</p>
-      <p>{{ item.title }}</p>
-      <p>{{ item.body }}</p>
-      <p><button (click)="deletePost(item.id)">DELETE POST</button></p>
+    <div class="mat-list-ngFor" *ngFor="let material of usersComponent.users$ | async">
+      <p>{{ material.title }}</p>
+      <p>{{ material.body }}</p>
+      <p><button (click)="deletePost(material.id)">DELETE POST</button></p>
       <p><button (click)="openDialog()">EDIT POST</button></p>
     </div>
   </div>

@@ -1,14 +1,9 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {NgForOf} from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-user-card',
-  imports: [
-    NgForOf
-  ],
+  imports: [],
   templateUrl: './user-card.component.html',
-  styleUrl: './user-card.component.scss'
+  styleUrl: './user-card.component.scss',
 })
-export class UserCardComponent {
-
-}
+export class UserCardComponent {}

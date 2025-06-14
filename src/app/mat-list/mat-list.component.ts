@@ -1,10 +1,11 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {MatListDialogComponent} from '../mat-list-dialog/mat-list-dialog.component';
 import {UsersApiComponent} from '../services/users-api.component';
 import {UsersComponent} from '../services/users.component';
 import {AsyncPipe, NgForOf} from '@angular/common';
 import {Users} from '../interfaces/users.interface';
+import { Material } from '../interfaces/material.interface';
 
 @Component({
   selector: 'app-mat-list',
@@ -17,6 +18,7 @@ import {Users} from '../interfaces/users.interface';
 })
 export class MatListComponent {
 
+  @Input() material!: Material;
   readonly usersApiComponent = inject(UsersApiComponent)
   readonly usersComponent = inject(UsersComponent)
   readonly dialog = inject(MatDialog)
@@ -39,7 +41,7 @@ export class MatListComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(MatListDialogComponent, {
-      data: {name: this.usersComponent.users$},
+      data: {material: this.material},
     });
     dialogRef.afterClosed().subscribe(result => {
       this.usersComponent.editUser(result)
